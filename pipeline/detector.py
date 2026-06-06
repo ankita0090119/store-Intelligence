@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-# Load AI model — downloads automatically on first run (~6MB)
+
 model = YOLO("yolov8n.pt")
 
 
