@@ -1,0 +1,38 @@
+[
+  {
+    "type": "person_entered",
+    "time_sec": 26.1,
+    "person": 2,
+    "zone": "shelves_top"
+  },
+  {
+    "type": "still_in_zone",
+    "time_sec": 26.14,
+    "person": 2,
+    "zone": "shelves_top"
+  },
+  {
+    "type": "still_in_zone",
+    "time_sec": 26.18,
+    "person": 2,
+    "zone": "shelves_top"
+  },
+  {
+    "type": "person_entered",
+    "time_sec": 28.14,
+    "person": 3,
+    "zone": "premium_brands"
+  },
+  {
+    "type": "person_entered",
+    "time_sec": 84.86,
+    "person": 9,
+    "zone": "shelves_top"
+  },
+  {
+    "type": "still_in_zone",
+    "time_sec": 84.9,
+    "person": 9,
+    "zone": "shelves_top"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "camera": "CAM 4",
+  "total_events": 6,
+  "footfall": 3,
+  "zone_popularity": {
+    "shelves_top": 2,
+    "premium_brands": 1
+  },
+  "avg_dwell_secs": {},
+  "peak_time_sec": 20,
+  "peak_count": 2,
+  "anomalies": []
+}

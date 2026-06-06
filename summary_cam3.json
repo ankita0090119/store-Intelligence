@@ -1,0 +1,22 @@
+{
+  "camera": "CAM 3",
+  "total_events": 19067,
+  "footfall": 124,
+  "zone_popularity": {
+    "korean_skincare": 21,
+    "good_vibes": 59,
+    "face_shop": 34,
+    "shelves_top": 18,
+    "premium_brands": 34
+  },
+  "avg_dwell_secs": {
+    "face_shop": 4.4,
+    "good_vibes": 1.5,
+    "shelves_top": 0.2,
+    "korean_skincare": 0.7,
+    "premium_brands": 2.6
+  },
+  "peak_time_sec": 70,
+  "peak_count": 21,
+  "anomalies": []
+}
