@@ -1,17 +1,28 @@
 import json
-from pipeline.detector    import get_detections
+from pathlib import Path
+
+from pipeline.detector import get_detections
 from pipeline.zone_mapper import get_zone
 
-# Your CAM 1 video path — already filled in for you!
-VIDEO = r"C:\Users\Ankitaa\store-intelligence\footage\CCTV Footage\CAM 5.mp4"
 
-detections = get_detections(VIDEO)
+# Project root directory
+BASE_DIR = Path(__file__).resolve().parent
+
+# Input video
+VIDEO = BASE_DIR / "data" / "videos" / "CAM 5.mp4"
+
+# Output events file
+OUTPUT = BASE_DIR / "data" / "events" / "events_cam5.json"
+
+
+# Run detection and tracking
+detections = get_detections(str(VIDEO))
 
 events = []
 last_zone = {}
 
 for d in detections:
-    tid  = d["track_id"]
+    tid = d["track_id"]
     zone = get_zone(d["center_x"], d["center_y"])
 
     if tid not in last_zone:
@@ -22,17 +33,22 @@ for d in detections:
         etype = "still_in_zone"
 
     last_zone[tid] = zone
+
     events.append({
-        "type":     etype,
+        "type": etype,
         "time_sec": d["time_sec"],
-        "person":   tid,
-        "zone":     zone,
+        "person": tid,
+        "zone": zone,
     })
 
-with open("events.json", "w") as f:
+
+# Save generated events
+with open(OUTPUT, "w") as f:
     json.dump(events, f, indent=2)
 
-print(f"\n✅ Done! {len(events)} events saved to events.json")
+
+print(f"\n✅ Done! {len(events)} events saved to {OUTPUT}")
 print("First 3 events:")
-for e in events[:3]:
-    print(" ", e)
+
+for event in events[:3]:
+    print(" ", event)

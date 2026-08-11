@@ -19,8 +19,13 @@ def get_detections(video_path):
         if not ok:
             break
 
-        results = model.track(frame, persist=True, classes=[0], verbose=False)
-
+        results = model.track(
+    frame,
+    persist=True,
+    classes=[0],
+    tracker="bytetrack.yaml",
+    verbose=False
+)
         for box in results[0].boxes:
             if box.id is None:
                 continue
